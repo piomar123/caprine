@@ -292,6 +292,7 @@ function createMainWindow() {
 		}
 
 		mainWindow.webContents.send('toggle-mute-notifications', config.get('notificationsMuted'));
+		mainWindow.webContents.send('toggle-mute-audio', config.get('audioMuted'));
 		mainWindow.webContents.send('toggle-message-buttons', config.get('showMessageButtons'));
 	});
 

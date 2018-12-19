@@ -115,6 +115,16 @@ const preferencesSubmenu = [
 		}
 	},
 	{
+		label: 'Mute All Audio',
+		id: 'mute-audio',
+		type: 'checkbox',
+		checked: config.get('audioMuted'),
+		click(item, focusedWindow) {
+			config.set('mute-audio', item.checked);
+			focusedWindow.webContents.setAudioMuted(item.checked);
+		}
+	},
+	{
 		label: 'Show Unread Badge',
 		type: 'checkbox',
 		checked: config.get('showUnreadBadge'),
